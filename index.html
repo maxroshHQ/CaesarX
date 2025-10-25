@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaesarX</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+</head>
+<body>
+
+    <div class="aria-live-region" aria-live="polite"></div>
+
+    <header class="app-header">
+        <h1 class="title" data-text="CaesarX">CaesarX</h1>
+        <nav class="header-nav">
+            <a href="https://github.com/maxroshHQ" target="_blank" rel="noopener noreferrer" aria-label="View source on GitHub">
+                <img src="assets/github.png" alt="GitHub Icon" class="icon">
+            </a>
+            <a href="README.md#faq" aria-label="Frequently Asked Questions">
+                <img src="assets/help.png" alt="FAQ Icon" class="icon">
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card" aria-labelledby="controls-heading">
+            <h2 id="controls-heading" class="visually-hidden">Cipher Controls</h2>
+            
+            <div class="control-grid">
+                <div class="form-group shift-control">
+                    <label for="shift-input">Shift</label>
+                    <div class="input-group">
+                        <button id="btn-shift-minus" class="btn-icon" aria-label="Decrement shift">-</button>
+                        <input type="number" id="shift-input" value="3" min="-1000" max="1000" step="1">
+                        <button id="btn-shift-plus" class="btn-icon" aria-label="Increment shift">+</button>
+                    </div>
+                </div>
+                
+                <div class="form-group toggle-group">
+                    <label for="mode-toggle" class="toggle-label">
+                        <span id="mode-label-encrypt">Encrypt</span>
+                        <input type="checkbox" id="mode-toggle" class="toggle-checkbox" role="switch">
+                        <span class="toggle-switch" aria-hidden="true"></span>
+                        <span id="mode-label-decrypt">Decrypt</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="input-text">Input</label>
+                <textarea id="input-text" rows="6" placeholder="Type your secret message here..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="output-text">Output</label>
+                <div class="output-wrapper">
+                    <textarea id="output-text" rows="6" readonly placeholder="KHOOR..."></textarea>
+                    <button id="btn-copy" class="btn-icon btn-copy" aria-label="Copy output to clipboard">
+                        </button>
+                </div>
+            </div>
+            
+            <div class="footer-controls">
+                <div class="form-group toggle-group-small">
+                    <input type="checkbox" id="live-update-toggle" class="toggle-checkbox-small" checked>
+                    <label for="live-update-toggle" class="toggle-label-small">Live Update</label>
+                </div>
+                <!-- <div id="metadata-display" class="metadata">
+                    Shift = 3 · Mode = Encrypt · Letters only (A–Z) · Case preserved
+                </div> -->
+            </div>
+        </section>
+
+        <div id="copy-toast" class="toast" role="status">
+            Copied!
+        </div>
+
+        <section class="bruteforce-section" hidden>
+            <h3>All 26 Shifts</h3>
+            <div id="bruteforce-output">
+                </div>
+        </section>
+
+    </main>
+
+    <footer class="app-footer">
+        <p>Built with love by V0!D</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
