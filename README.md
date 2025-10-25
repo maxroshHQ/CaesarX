@@ -1,4 +1,4 @@
-Caesar
+***Caesar***
 Caesar is a minimal, single-page web app for encrypting and decrypting text using the Caesar cipher. Built with pure HTML, CSS, and JavaScript.
 
 🚀 Features
